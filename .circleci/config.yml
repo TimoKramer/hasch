@@ -160,7 +160,7 @@ workflows:
               only: development
           requires:
             - setup
-            - format
+              #- format
             - unittest
             - integrationtest
             - browsertest
