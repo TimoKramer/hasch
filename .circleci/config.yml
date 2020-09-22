@@ -13,6 +13,7 @@ executors:
           POSTGRES_USER: alice
           POSTGRES_PASSWORD: foo
           POSTGRES_DB: config-test
+    working_directory: /home/circleci/replikativ
 
 jobs:
   setup:
