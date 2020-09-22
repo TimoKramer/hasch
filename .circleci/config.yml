@@ -114,6 +114,7 @@ jobs:
           name: Install xmllint
           command: sudo apt-get install libxml2-utils
       - run:
+          name: Deploy Snapshot to Clojars
           command: |
             VERSION=$(xmllint --xpath '/*[local-name()="project"]/*[local-name()="version"]/text()' pom.xml)
             if [[ ${VERSION} =~ .*-SNAPSHOT ]]; then
