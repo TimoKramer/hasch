@@ -92,7 +92,7 @@ jobs:
           at: /home/circleci
       - run:
           name: Run Integrationtests
-          command: ./bin/run-integrationtest
+          command: ./bin/run-integrationtests
           no_output_timeout: 5m
 
   build:
@@ -102,7 +102,7 @@ jobs:
           at: /home/circleci
       - run:
           name: Build
-          command: deps -A:uberjar
+          command: clojure -A:uberjar
           no_output_timeout: 5m
 
   deploy-snapshot:
