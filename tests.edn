@@ -1,2 +1,5 @@
 #kaocha/v1
- {:tests [{:id :unit}]}
+ {:tests [{:id :unit
+           :skip-meta [:integration]}
+          {:id :integration
+           :focus-meta [:integration]}]}

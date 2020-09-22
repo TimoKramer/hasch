@@ -25,15 +25,24 @@ jobs:
             - deps-{{ checksum "deps.edn" }}
             - deps-
       - run: clojure -e nil
-      - run: npm ci
       - save_cache:
           key: deps-{{ checksum "deps.edn" }}
           paths:
             - /home/circleci/.m2
+      - restore_cache:
+          keys:
+            - npm-{{ checksum "package.json" }}
+            - npm-
+      - run: npm ci
+      - save_cache:
+          key: npm-{{ checksum "package.json" }}
+          paths:
+            - /home/circleci/.npm
       - persist_to_workspace:
           root: /home/circleci/
           paths:
             - .m2
+            - .npm
             - replikativ
 
   unittest:
@@ -43,7 +52,7 @@ jobs:
           at: /home/circleci
       - run:
           name: Run Unittests
-          command: ./bin/kaocha
+          command: ./bin/run-unittests
           no_output_timeout: 5m
 
   browsertest:
@@ -52,7 +61,7 @@ jobs:
       - attach_workspace:
           at: /home/circleci
       - run:
-          name: Run Integrationtests
+          name: Run Browsertests
           command: ./bin/run-browsertests
           no_output_timeout: 5m
 

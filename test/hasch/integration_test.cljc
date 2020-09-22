@@ -25,7 +25,7 @@
 
 (use-fixtures :once config-record-test-fixture)
 
-(deftest test-config-record-test
+(deftest ^:integration test-config-record-test
   ;; search the data
   (is (= #{[3 "Alice" 20] [4 "Bob" 30] [5 "Charlie" 40]}
          (d/q '[:find ?e ?n ?a
