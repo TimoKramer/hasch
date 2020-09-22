@@ -1,4 +1,4 @@
-(ns hasch.integration-test
+(ns hasch.datahike-test
   (:require
    [clojure.test :refer :all]
    [datahike.api :as d]))

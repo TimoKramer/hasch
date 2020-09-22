@@ -16,7 +16,6 @@
   :node-test
   {:target :node-test
    :output-to "out/node-tests.js"
-   :ns-regexp "^api-test.cljc$"
    :autorun true}
   
   :ci

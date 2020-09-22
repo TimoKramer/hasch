@@ -7,7 +7,8 @@
                   :extra-paths ["test"]}
            :dev  {:extra-deps {criterium/criterium      {:mvn/version "0.4.6"}}}
            :test {:extra-deps {lambdaisland/kaocha      {:mvn/version "1.0.641"}
-                               io.replikativ/datahike   {:mvn/version "0.3.2-SNAPSHOT"}
+                               io.replikativ/datahike   {:mvn/version "0.3.2-SNAPSHOT"
+                                                         :exclusions "io.replikativ/hasch"}
                                io.replikativ/hasch      {:local/root "."}}
                   :extra-paths ["test"]}
            ;; pull in specific versions of clojure and clojurescript
