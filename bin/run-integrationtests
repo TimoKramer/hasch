@@ -21,4 +21,4 @@ PG_NAME=$(setup_PG)
 
 sleep 5
 
-TIMBRE_LEVEL=':warn' clojure -A:test -m kaocha.runner --focus :integration
+TIMBRE_LEVEL=':warn' clojure -A:test -m kaocha.runner --focus hasch.integration-test
